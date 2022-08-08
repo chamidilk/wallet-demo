@@ -11,5 +11,5 @@ public class WalletDto {
     private long walletId;
 
 
-    private double amount;
+    private int amount;
 }

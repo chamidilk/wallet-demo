@@ -6,13 +6,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class Wallet {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,11 +23,6 @@ public class Wallet {
     @Version
     private int version;
 
-    private int amount; // amount is in the smallest unit, cent/penny
-
-    private String currency;
-
-    @ManyToOne
-    @JoinColumn
-    private User user;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private Set<Wallet> wallets = new HashSet<>(0);
 }
