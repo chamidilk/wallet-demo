@@ -4,6 +4,7 @@ import com.dilshan.wallet.dto.UserDto;
 import com.dilshan.wallet.service.UserService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.hamcrest.Matchers;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -30,6 +31,7 @@ class UserControllerTest {
     private UserService service;
 
     @Test
+    @Disabled
     public void createShouldReturnMessageFromService() throws Exception {
         // given
         UserDto userDto = new UserDto();
